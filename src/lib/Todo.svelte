@@ -1,17 +1,21 @@
+
 <script lang="ts">
   let value = '';
   let todos = ['test name', 'test description'];
 
+  // Добавить элемент
   const onAddTodo = () => {
     todos = [...todos, value];
     value = '';
   };
 
+  // Удалить элемент
   const onDeleteTodo = (idx) => {
     const delItem = todos[idx];
     todos = todos.filter((x) => x !== delItem);
   };
 </script>
+
 
 <h2>Todo list</h2>
 
@@ -20,6 +24,7 @@
   <button on:click={onAddTodo} class="block px-2 py-1 text-sm"> Add </button>
 </div>
 
+<!-- Маппинг данных -->
 <div class="flex mt-2 flex-col">
   {#each todos as item, i}
     <span class="flex justify-between border-zinc-700 border-solid border px-2 py-1 rounded-md items-center gap-2 mt-1">
